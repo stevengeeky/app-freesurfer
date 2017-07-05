@@ -9,8 +9,10 @@ if [ $ENV == "IUHPC" ]; then
 fi
 node $SERVICE_DIR/genpbs.js > submit.pbs
 
-#clean up previous job (just in case)
-rm -f finished
+#rm -f finished
+
+# Steven's code
+cp ~/freesurfer.tar.gz ./ && tar -xf freesurfer.tar.gz && rm freesurfer.tar.gz
 
 if [ $ENV == "IUHPC" ]; then
 	echo "Submitting.."
